@@ -1,5 +1,4 @@
 ---
-title: The mathematics of juggling
 author: Ella Kaye
 date: 2026-09-10
 date-format: long
@@ -20,7 +19,7 @@ knitr::opts_chunk$set(message = TRUE)
 
 # {.center-h}
 
-![](images/jugglr.png){fig-alt="hex for the jugglr package, with the brightly-coloured letters of jugglr appearing to be thrown in a cascade pattern"}
+![](jugglr.png){fig-alt="hex for the jugglr package, with the brightly-coloured letters of jugglr appearing to be thrown in a cascade pattern"}
 
 [**ellakaye.github.io/jugglr**](https://ellakaye.github.io/jugglr){.larger200}
 
@@ -35,8 +34,11 @@ ss432 <- siteswap("432")
 
 ```{r}
 #| echo: false
+#| message: false
 #| fig-alt: "Timeline diagram of the 423 siteswap pattern, showing the throws and catches of three props over time. Each throw is shown as an arc, with the height of the arc corresponding to the throw value. The arcs are coloured according to which prop is being thrown."
-ladder(ss423)
+neon <- c("#3AD531", "#00BAE4", "#F02BC2")
+ladder(ss423) +
+  ggplot2::scale_color_manual(values = neon)
 ```
 
 ## 
